@@ -1,5 +1,7 @@
 const role = require('./lib/classPos.js');
 const ask = require('inquirer');
+const html = require('./src/htmlCreator.js');
+
 var employees = [];
 //questions for various roles (manager, engineer, intern)
 manQs = [
@@ -71,16 +73,10 @@ intQs = [
 //menu question that asks a user what new role they would like to add
 menuQs = [
     {
-        type: 'confirm',
-        name: 'add',
-        message: 'Would you like to add another team member?',
-    },
-    {
         type: 'list',
         name: 'role',
-        message: 'What type of member would you like to add?',
-        choices: ['Engineer', 'Intern'],
-        when: (answers) => answers.add == true,
+        message: 'Would you like to add another member to your team?',
+        choices: ['Engineer', 'Intern', 'Exit'],
     },
 ];
 //starts the program and immediately prompts for a team manager
@@ -114,13 +110,16 @@ async function addEng() {
 //function that continues to prompt a user with questions until they decide not
 //to add another team member
 async function askQuestions() {
-    // console.log(employees);
     var newMember = await ask.prompt(menuQs);
-    if (newMember.add) {
-        newMember.role == 'Engineer' ? addEng() : addInt();
+    if (newMember.role == 'Engineer') {
+        addEng();
+    } else if (newMember.role == 'Intern') {
+        addInt();
     } else {
-        console.log(employees);
-        console.log('goodbye');
+        html.createHtml(employees);
+        for (var i = 0; i < employees.length; i++) {
+            console.log(employees[i].getRole());
+        }
     }
 }
 init();

@@ -7,11 +7,11 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "none"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
-    "url": "still working"
+    "url": "still working on it"
   },
   "keywords": [
     "none"
