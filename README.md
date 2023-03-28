@@ -30,5 +30,4 @@ then in that same directory run:
 
 All work done by Malik Kouyate(mkalik)
 
-The styling was done via [Bulma](https://bulma.io/documentation/) And the icons were generated via [Font Awesome](https://fontawesome.com/)
 
