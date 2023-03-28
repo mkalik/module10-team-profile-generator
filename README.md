@@ -17,9 +17,11 @@ clone this repo.
 ## 2.Usage:
 
 first youre going to have to install some dependencies so run this in the directory containing the package.json file:
+
     npm i
 
 then in that same directory run:
+    
     node index.js
 
 [A video demonstration](https://youtu.be/N_HeBobKSYw)
