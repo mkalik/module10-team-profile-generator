@@ -5,7 +5,7 @@ var htmlHead = `<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <title>My Team</title>
-    <link rel="stylesheet" href="../lib/style.css">
+    <link rel="stylesheet" href="../lib/style/style.css">
 </head>
 <header>My team</header>
 <body>
