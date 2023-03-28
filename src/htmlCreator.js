@@ -5,12 +5,15 @@ var htmlHead = `<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <title>My Team</title>
+    <link rel="stylesheet" href="../lib/style.css">
 </head>
 <header>My team</header>
-<body>`;
+<body>
+<div class = "employee-info">`;
 var htmlFoot = ` 
+</div>
 <footer>
-    <div>created with<a href="https://github.com/mkalik/module10-team-profile-generator">github</a></div>
+    <div>created with <a href="https://github.com/mkalik/module10-team-profile-generator">github</a></div>
 </footer>
 </body>
 </html>`;
@@ -31,7 +34,7 @@ async function createHtml(employeeInfo) {
         info.getRole() == 'manager'
             ? (holder = `Office Number: ${info.getOffice()}`)
             : info.getRole() == 'engineer'
-            ? (holder = `<a href = 'https://github.com/${info.getGit()}'target="_blank" rel="noopener noreferrer"> ${info.getGit()}</a>`)
+            ? (holder = `<div> github: <a href = 'https://github.com/${info.getGit()}'target="_blank" rel="noopener noreferrer">${info.getGit()}</a></div>`)
             : (holder = `School: ${info.getSchool()}`);
         //this is essentially the template for each employee box
         var html = `<div class = 'employee'>

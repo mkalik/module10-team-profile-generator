@@ -4,7 +4,7 @@ const html = require('./src/htmlCreator.js');
 
 var employees = [];
 //questions for various roles (manager, engineer, intern)
-manQs = [
+var manQs = [
     {
         type: 'input',
         name: 'Name',
@@ -26,7 +26,7 @@ manQs = [
         message: "Enter your team manager's office number",
     },
 ];
-engQs = [
+var engQs = [
     {
         type: 'input',
         name: 'Name',
@@ -35,7 +35,7 @@ engQs = [
     {
         type: 'input',
         name: 'ID',
-        message: "Enter your enigneer's id number",
+        message: "Enter your engineer's id number",
     },
     {
         type: 'input',
@@ -48,7 +48,7 @@ engQs = [
         message: "Enter your engineer's github account name",
     },
 ];
-intQs = [
+var intQs = [
     {
         type: 'input',
         name: 'Name',
@@ -71,7 +71,7 @@ intQs = [
     },
 ];
 //menu question that asks a user what new role they would like to add
-menuQs = [
+var menuQs = [
     {
         type: 'list',
         name: 'role',
@@ -117,9 +117,6 @@ async function askQuestions() {
         addInt();
     } else {
         html.createHtml(employees);
-        for (var i = 0; i < employees.length; i++) {
-            console.log(employees[i].getRole());
-        }
     }
 }
 init();
